@@ -1078,7 +1078,7 @@ sub prev_perf {
  $name = perf_name($name,$vtype) if defined($vtype);
  return $prev_perf_data{$name} if exists($prev_perf_data{$name});
  # also lets check in case nagios stripped quotes out of perf
- if ($name =~ /^'(.*)`$/) {
+ if ($name =~ /^'(.*)'$/) {
     return $prev_perf_data{$1} if exists($prev_perf_data{$1});
  }
  return undef;
